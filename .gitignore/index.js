@@ -64,4 +64,32 @@ if(message.content === prefix + 'ban'){
 
   
 })
+ //commande de kick
+  if(message.content === prefix + 'kick'){
+  let raison = message.content.substr(28);
+  let kickMember = message.guild.member(message.mentions.users.first());
+  if(!message.member.hasPermissions("KICK_MEMBERS")){
+      message.channel.send(`❌ ${message.author},Tu n'as pas la permission de kick les chatons.`)
+      return;
+  }else{
+      if(!kickMember){
+          message.channel.send(`❌ ${message.author}, veuillez mentionner un chaton.`)
+          return;
+    }else{                                                 
+        if(!kickMember.kickable){
+            message.channel.send(`❌ ${message.author},Je peux pas kick ce chaton veuillez vérifier mes rôles et permissions`)
+            return;
+      }else{                                                 
+          if(kickMember.hasPermission("ADMINISTRATOR")){
+              message.channel.send(`❌ ${message.author},ce chaton est trop puissant, je peux pas faire ça`)
+              return;
+          }else{
+  message.delete(message.author);
+  message.guild.member(kickMember).kick({reason: `${raison}}`});
+  message.channel.sendMessage(`❌ ${kickMember}a été kick!aison ${raison}"`);
+          }
+        }
+      }
+  }
+}
 })
