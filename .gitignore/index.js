@@ -26,7 +26,7 @@ bot.on('message', message => {
     if (message.content === (prefix + "help")){
         var help_embed = new Discord.RichEmbed()
            .setColor('#821991')
-            .addField("__Developement__", ":warning: *Bot en  Dévelope* :warning: \n")
+            .addField("__Developement__", ":warning: *Bot en Dévelopement* :warning: \n")
             .addField("__Staff__", "`sh!kick [SOON]` => Expulser un joueur du serveur Discord \n`sh!ban [SOON]` => Bannir un joueur du serveur Discord")
             .addField("__Joueur__", "`h!ip` => Savoir l'ip pour acceder au serveur")
         .setFooter("Developed by Steellgold")        
