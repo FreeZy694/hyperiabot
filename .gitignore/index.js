@@ -25,7 +25,7 @@ bot.on('message', message => {
     
     if (message.content === (prefix + "help")){
         var help_embed = new Discord.RichEmbed()
-           .setColor('#269f26')
+           .setColor('#821991')
             .addField("__Developement__", "*Desolé Steellgold me Dévelope*")
            .setFooter("Developed by Steellgold")        
            message.channel.send(help_embed)
