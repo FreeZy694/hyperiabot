@@ -26,7 +26,7 @@ bot.on('message', message => {
     if (message.content === (prefix + "help")){
         var help_embed = new Discord.RichEmbed()
            .setColor('#821991')
-            .addField("__Developement__", "*Desolé Steellgold me Dévelope \n*")
+            .addField("__Developement__", "*Desolé Steellgold me Dévelope*\n")
             .addField("__Staff__", "`sh!kick` => Expulser un joueur du serveur Discord \n`sh!ban` => Bannir un joueur du serveur Discord")
            .setFooter("Developed by Steellgold")        
            message.channel.send(help_embed)
