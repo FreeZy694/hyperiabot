@@ -12,12 +12,12 @@ bot.on('ready', function (){
 })
 
 bot.on("guildMemberAdd", member => {
-  member.guild.channels.find("name", "bienvenue-aurevoir").send(`__Bonjour !__ ${member} \n \n**Bienvenue sur HyperiaNetwork** ! \n \n*Besoins d'aide ? =>* \nMentione le **Staff** `)
+  member.guild.channels.find("name", "bienvenue-aurevoir").send(`__Bonjour !__ ${member.user.username} \n \n**Bienvenue sur HyperiaNetwork** ! \n \n*Besoins d'aide ? =>* \nMentione le **Staff** `)
   console.log("Quelqu'un a rejoint le Discord")
 })
 
 bot.on("guildMemberRemove", member => {
-  member.guild.channels.find("name", "bienvenue-aurevoir").send(`Aurevoir ! ${member}`)
+  member.guild.channels.find("name", "bienvenue-aurevoir").send(`Aurevoir ! ${member.user.username}`)
   console.log("Quelqu'un a quitté le Discord")
 })
 
