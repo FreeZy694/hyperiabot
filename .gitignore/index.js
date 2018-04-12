@@ -9,6 +9,7 @@ console.log("Ready to Start Utulisation")
 
 bot.on('ready', function (){
     bot.user.setPresence({ game: { name: "| h!help | HyperiaNetwork |"}})
+    bot.user.setPresence({status:'dnd'})
 })
 
 bot.on("guildMemberAdd", member => {
