@@ -51,7 +51,7 @@ bot.on('message', message => {
   
 if(message.content.startsWith(prefix + 'say')) {
       if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")){
-        return message.reply("Tu n'a pas à me donner des ordres !").catch(console.error)
+        return message.reply("Oups :'( __Pas asser de permissions__").catch(console.error)
         }
                 message.delete(2)
                 message.channel.send(message.content.slice(5, message.content.lenght));
