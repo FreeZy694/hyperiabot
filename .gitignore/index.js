@@ -49,7 +49,7 @@ bot.on('message', message => {
            console.log("ed!help")
     }
   
-  if(message.content.startsWith(prefix + 'say')) {
+if(message.content.startsWith(prefix + 'say')) {
       if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")){
         return message.reply("Tu n'a pas à me donner des ordres !").catch(console.error)
         }
