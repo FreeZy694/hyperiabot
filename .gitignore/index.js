@@ -63,24 +63,24 @@ if(message.content.startsWith(prefix + 'say')) {
   let raison = message.content.substr(28);
   let kickMember = message.guild.member(message.mentions.users.first());
   if(!message.member.hasPermissions("KICK_MEMBERS")){
-      message.channel.send(`:x: ${message.author},Tu n'as pas la permission de kick les chatons.`)
+      message.channel.send(`:x: ${message.author},Tu n'as pas la permission de kick les joueurs.`)
       return;
   }else{
       if(!kickMember){
-          message.channel.send(`:x: ${message.author}, veuillez mentionner un chaton.`)
+          message.channel.send(`:x: ${message.author}, veuillez mentionner un joueur.`)
           return;
     }else{                                                 
         if(!kickMember.kickable){
-            message.channel.send(`:x: ${message.author},Je peux pas kick ce chaton veuillez vérifier mes rôles et permissions`)
+            message.channel.send(`:x: ${message.author},Je peux pas kick ce joueur veuillez vérifier mes rôles et permissions`)
             return;
       }else{                                                 
           if(kickMember.hasPermission("ADMINISTRATOR")){
-              message.channel.send(`:x: ${message.author},ce chaton est trop puissant, je peux pas faire ça`)
+              message.channel.send(`:x: ${message.author} ,ce joueur est trop puissant, je peux pas faire ça`)
               return;
           }else{
   message.delete(message.author);
   message.guild.member(kickMember).kick({reason: `${raison}}`});
-  message.channel.sendMessage(`:x: ${kickMember}a été kick!aison ${raison}"`);
+  message.channel.sendMessage(`:x: ${kickMember} a été kick ! raison ${raison}"`);
           }
         }
       }
@@ -91,19 +91,19 @@ if(message.content === prefix + 'ban'){
     let raison = message.content.substr(27);
     let banMember = message.guild.member(message.mentions.users.first());
     if(!message.member.hasPermissions("BAN_MEMBERS")){
-        message.channel.send(`:x: ${message.author},Tu n'as pas la permission de ban les chatons.`)
+        message.channel.send(`:x: ${message.author},Tu n'as pas la permission de ban les joueurs.`)
         return;
     }else{
         if(!banMember){
-            message.channel.send(`:x: ${message.author}, veuillez mentionner un chaton.`)
+            message.channel.send(`:x: ${message.author}, veuillez mentionner un joueur.`)
             return;
       }else{                                                 
           if(!banMember.bannable){
-              message.channel.send(`:x: ${message.author},Je peux pas ban ce chaton veuillez vérifier mes rôles et permissions`)
+              message.channel.send(`:x: ${message.author},Je peux pas ban ce joueur veuillez vérifier mes rôles et permissions`)
               return;
         }else{                                                 
             if(banMember.hasPermission("ADMINISTRATOR")){
-                message.channel.send(`:x: ${message.author},ce chaton est trop puissant, je peux pas faire ça`)
+                message.channel.send(`:x: ${message.author},ce joueur est trop puissant, je peux pas faire ça`)
                 return;
             }else{
     message.delete(message.author);
