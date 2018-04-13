@@ -17,6 +17,8 @@ bot.on("guildMemberAdd", member => {
   console.log("Quelqu'un a rejoint le Discord")
 })
 
+bot.on('guildMemberAdd',(member) => { member.addRole('434389359245000704').catch(console.error); });
+
 bot.on("guildMemberRemove", member => {
   member.guild.channels.find("name", "bienvenue-aurevoir").send(`Aurevoir ! ${member.user.username}`)
   console.log("Quelqu'un a quitté le Discord")
