@@ -17,7 +17,10 @@ bot.on("guildMemberAdd", member => {
   console.log("Quelqu'un a rejoint le Discord")
 })
 
-bot.on('guildMemberAdd',(member) => { member.addRole('434389359245000704').catch(console.error); });
+bot.on('guildMemberAdd', member => {
+      var role = member.guild.roles.find('name', "test);
+      member.addRole(role)
+      })
 
 bot.on("guildMemberRemove", member => {
   member.guild.channels.find("name", "bienvenue-aurevoir").send(`Aurevoir ! ${member.user.username}`)
