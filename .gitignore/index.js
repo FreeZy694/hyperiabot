@@ -57,7 +57,16 @@ if(message.content.startsWith(prefix + 'say')) {
                 message.channel.send(message.content.slice(5, message.content.lenght));
 
   }
-
+ if (message.content === (prefix + "ip")){
+        var help_embed = new Discord.RichEmbed()
+           .setColor('#821991')
+            .addField("CHACHIMI !?!", ":shlaquette::chachimi:")
+            .setFooter("Developed by FreeZy694")        
+           message.channel.send(help_embed)
+           console.log("ed!help")
+    }
+  
+  
      //commande de kick
   if(message.content === prefix + 'kick'){
   let raison = message.content.substr(28);
